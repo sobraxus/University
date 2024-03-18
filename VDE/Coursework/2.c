@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
         displayRecord(&db.records[i]);
     }
 
-    return 0;
+    return 0; 
 }
 
 int loadDatabase(const char *filename, Database *db) {

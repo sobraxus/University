@@ -15,7 +15,7 @@ User* createUser(const char* name) {
     User *user = malloc(sizeof(User));
     if (user) {
         strncpy(user->name, name, sizeof(user->name) - 1);
-        user->name[sizeof(user->name) - 1] = '\0';
+        user->name[sizeof(user->name) - 1] = '\0'; 
         user->printName = NULL;
     }
     return user;
