@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
         printf("Failed to load database\n");
         return 1;
     }
+    
 
     for (int i = 0; i < db.numRecords; i++) {
         displayRecord(&db.records[i]);
@@ -49,15 +50,16 @@ int loadDatabase(const char *filename, Database *db) {
     fscanf(file, "%d %d", &db->version, &db->numRecords);
     for (int i = 0; i < db->numRecords && i < MAX_RECORDS; i++) {
         fscanf(file, "%d %d", &db->records[i].id, &db->records[i].size);
-        db->records[i].data = malloc(db->records[i].size * sizeof(char));
+        db->records[i].data = malloc(db->records[i].size * sizeof(char)); //10x1
         if (db->records[i].data == NULL) {
             perror("Failed to allocate memory for record data");
             fclose(file);
             return -1;
         }
         fread(db->records[i].data, sizeof(char), db->records[i].size, file);
+        
     }
-
+    
     fclose(file);
     return 0;
 }
