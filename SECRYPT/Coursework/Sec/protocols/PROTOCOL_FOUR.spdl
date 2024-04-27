@@ -1,0 +1,18 @@
+protocol protocolFour(I,R)
+{
+    role I
+    {
+        fresh Ni:Nonce;
+        send_1(I,R, {I,R,Ni}sk(I));
+	recv_2(R,I, ({Ni}sk(R),{I}sk(R)));
+    }
+
+    role R
+    {
+        var Ni:Nonce;
+        recv_1(I,R, {I,R,Ni}sk(I));
+	send_2(R,I, ({Ni}sk(R),{I}sk(R)));
+    }
+
+}
+

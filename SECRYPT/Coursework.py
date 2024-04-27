@@ -209,7 +209,7 @@ ciph = AES.new(key, AES.MODE_ECB)
 ct = ciph.decrypt(CIPHERTEXT_3C)
 print(ct.decode()) """
 
-
+'''
 key = 'CA75EA75BA75EA75CA75' #16 byte key
 """ bloc1 = CIPHERTEXT_3C[0:4]
 bloc1 = decrypt_heys_final_round('CA75', 'EA75',True)
@@ -253,7 +253,7 @@ bloc5 = decrypt_heys_round(key[8:12], bloc5)
 bloc5 = decrypt_heys_round(key[4:8], bloc5)
 bloc5 = decrypt_heys_round(key[0:4], bloc5)
 bloc5 = xor_hex_hex(bloc5, CIPHERTEXT_3C[16:20], True)
-
+'''
 '''
  
  pt = PLAINTEXT[:4]*8 #plaintext (ZEROZERO) 
@@ -344,26 +344,26 @@ bloc5 = xor_hex_hex(bloc5, CIPHERTEXT_4D[12:16], True)
 ciph_No = pow(stu_No,e,n)
 print(ciph_No) #31843809755463598485
 
-
+'''
 #B
 
 print('Flamingo: ',sha1_file('flamingo.pdf'))
 print('Hatter  : ',sha1_file('hatter.pdf'))
 print('Heys    : ',sha1_file('heys.pdf'))
-Flamingo:  baba2841e2db8c8b94005848441a095e67456fc6
-Hatter  :  baba2841e2db8c8b94005848441a095e67456fc6
-Heys    :  b6271755f4a81af038a910e141e15ede41871708
+#Flamingo:  baba2841e2db8c8b94005848441a095e67456fc6
+#Hatter  :  baba2841e2db8c8b94005848441a095e67456fc6
+#Heys    :  b6271755f4a81af038a910e141e15ede41871708
 
 #C
 
 print('Flamingo: ',sha256_file('flamingo.pdf'))
 print('Hatter  : ',sha256_file('hatter.pdf'))
 print('Heys    : ',sha256_file('heys.pdf'))
-Flamingo:  59e99bff26d0322a70e3fb3e193267a397d825afd97bca692ff4954d13267850
-Hatter  :  611134263e283e028ffce61a3fc1ac38d2f66eb8b71a074608a6fc41b877e43c
-Heys    :  7879e32bac43ba8d92ef300f3b60b002d2b509bf7302420c8f8156aa4da98ef7
+#Flamingo:  59e99bff26d0322a70e3fb3e193267a397d825afd97bca692ff4954d13267850
+#Hatter  :  611134263e283e028ffce61a3fc1ac38d2f66eb8b71a074608a6fc41b877e43c
+#Heys    :  7879e32bac43ba8d92ef300f3b60b002d2b509bf7302420c8f8156aa4da98ef7
 
-
+'''
 #D
 
 pub = rsa.PublicKey(7831380548017175338915258319833911893931253330893508365879836914869334842132321469618467903977349122973376473368256628270012195036837460719988392463450933, 65537)
